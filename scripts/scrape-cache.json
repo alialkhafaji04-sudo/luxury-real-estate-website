@@ -1,0 +1,732 @@
+{
+  "hollywood-hills": {
+    "19990300": {
+      "price": 3499000,
+      "status": "FOR_SALE"
+    },
+    "20031472": {
+      "price": 2495000,
+      "status": "FOR_SALE"
+    },
+    "20045239": {
+      "price": 4479000,
+      "status": "FOR_SALE"
+    },
+    "20045861": {
+      "price": 1950000,
+      "status": "FOR_SALE"
+    },
+    "20531484": {
+      "price": 3795000,
+      "status": "FOR_SALE"
+    },
+    "20793553": {
+      "price": 4495000,
+      "status": "FOR_SALE"
+    },
+    "20795010": {
+      "price": 1745000,
+      "status": "FOR_SALE"
+    },
+    "20795042": {
+      "price": 125000000,
+      "status": "FOR_SALE"
+    },
+    "20797696": {
+      "price": 4799000,
+      "status": "FOR_SALE"
+    },
+    "20798017": {
+      "price": 2495000,
+      "status": "FOR_SALE"
+    },
+    "20798385": {
+      "price": 2699000,
+      "status": "FOR_SALE"
+    },
+    "20798994": {
+      "price": 5799000,
+      "status": "FOR_SALE"
+    },
+    "20800036": {
+      "price": 2489000,
+      "status": "FOR_SALE"
+    },
+    "20800539": {
+      "price": 1799999,
+      "status": "FOR_SALE"
+    },
+    "20801365": {
+      "price": 2995000,
+      "status": "FOR_SALE"
+    },
+    "20802104": {
+      "price": 2999000,
+      "status": "FOR_SALE"
+    },
+    "20802510": {
+      "price": 2698000,
+      "status": "FOR_SALE"
+    },
+    "20802552": {
+      "price": 3500000,
+      "status": "FOR_SALE"
+    },
+    "20803093": {
+      "price": 3995000,
+      "status": "FOR_SALE"
+    },
+    "20803420": {
+      "price": 3995000,
+      "status": "PENDING"
+    },
+    "20805107": {
+      "price": 1370000,
+      "status": "FOR_SALE"
+    },
+    "82749577": {
+      "price": 4995000,
+      "status": "FOR_SALE"
+    },
+    "95614071": {
+      "price": 1995000,
+      "status": "FOR_SALE"
+    },
+    "448039539": {
+      "price": 7250000,
+      "status": "FOR_SALE"
+    }
+  },
+  "brentwood": {
+    "20467554": {
+      "price": 1695000,
+      "status": "FOR_SALE"
+    },
+    "20467848": {
+      "price": 3950000,
+      "status": "SOLD"
+    },
+    "20528973": {
+      "price": 2901100,
+      "status": "OFF_MARKET"
+    },
+    "20529292": {
+      "price": 3792500,
+      "status": "OFF_MARKET"
+    },
+    "20537643": {
+      "price": 17888600,
+      "status": "OFF_MARKET"
+    },
+    "20537879": {
+      "price": 34995000,
+      "status": "FOR_SALE"
+    },
+    "20537999": {
+      "price": 17995000,
+      "status": "FOR_SALE"
+    },
+    "20538138": {
+      "price": 8915900,
+      "status": "OFF_MARKET"
+    },
+    "20538243": {
+      "price": 5434500,
+      "status": "OFF_MARKET"
+    },
+    "20538375": {
+      "price": 36500000,
+      "status": "FOR_SALE"
+    },
+    "20538460": {
+      "price": 39500000,
+      "status": "FOR_SALE"
+    },
+    "20546656": {
+      "price": 3799000,
+      "status": "FOR_SALE"
+    },
+    "20546954": {
+      "price": 7844100,
+      "status": "OFF_MARKET"
+    },
+    "20547042": {
+      "price": 5385000,
+      "status": "SOLD"
+    },
+    "20547048": {
+      "price": 4862400,
+      "status": "OFF_MARKET"
+    },
+    "20558910": {
+      "price": 9250000,
+      "status": "FOR_SALE"
+    },
+    "20558921": {
+      "price": 7895000,
+      "status": "FOR_SALE"
+    },
+    "20559005": {
+      "price": 3695000,
+      "status": "FOR_SALE"
+    },
+    "20559008": {
+      "price": 3250000,
+      "status": "FOR_SALE"
+    },
+    "20559199": {
+      "price": 2499000,
+      "status": "FOR_SALE"
+    },
+    "20559540": {
+      "price": 3995000,
+      "status": "FOR_SALE"
+    },
+    "61361416": {
+      "price": 1595000,
+      "status": "FOR_SALE"
+    },
+    "65242416": {
+      "price": 13900000,
+      "status": "FOR_SALE"
+    },
+    "125241295": {
+      "price": 27000000,
+      "status": "FOR_SALE"
+    },
+    "135474625": {
+      "price": 5750000,
+      "status": "FOR_SALE"
+    },
+    "448141044": {
+      "price": 9995000,
+      "status": "FOR_SALE"
+    }
+  },
+  "bel-air-holmby-hills": {
+    "20523926": {
+      "price": 48000000,
+      "status": "FOR_SALE"
+    },
+    "20523927": {
+      "price": 11550900,
+      "status": "OFF_MARKET"
+    },
+    "20523934": {
+      "price": 15936000,
+      "status": "OFF_MARKET"
+    },
+    "20523940": {
+      "price": 58000000,
+      "status": "FOR_SALE"
+    },
+    "20524379": {
+      "price": 59900000,
+      "status": "FOR_SALE"
+    },
+    "20524392": {
+      "price": 43500000,
+      "status": "FOR_SALE"
+    },
+    "20524401": {
+      "price": 42500000,
+      "status": "FOR_SALE"
+    },
+    "20525700": {
+      "price": 6995000,
+      "status": "FOR_SALE"
+    },
+    "20526755": {
+      "price": 22963000,
+      "status": "OFF_MARKET"
+    },
+    "20526756": {
+      "price": 12995000,
+      "status": "FOR_SALE"
+    },
+    "20526767": {
+      "price": 34500000,
+      "status": "FOR_SALE"
+    },
+    "20526802": {
+      "price": 170000000,
+      "status": "FOR_SALE"
+    },
+    "20526825": {
+      "price": 12276100,
+      "status": "OFF_MARKET"
+    },
+    "20526836": {
+      "price": 37375900,
+      "status": "OFF_MARKET"
+    },
+    "20527670": {
+      "price": 16500000,
+      "status": "FOR_SALE"
+    },
+    "20529507": {
+      "price": 13995000,
+      "status": "FOR_SALE"
+    },
+    "20529571": {
+      "price": 14999000,
+      "status": "FOR_SALE"
+    },
+    "20529580": {
+      "price": 10250000,
+      "status": "FOR_SALE"
+    },
+    "20529664": {
+      "price": 99950000,
+      "status": "FOR_SALE"
+    },
+    "20529771": {
+      "price": 7495000,
+      "status": "FOR_SALE"
+    },
+    "345772154": {
+      "price": 55000000,
+      "status": "FOR_SALE"
+    },
+    "447299556": {
+      "price": 29995000,
+      "status": "FOR_SALE"
+    }
+  },
+  "century-city": {
+    "20504573": {
+      "price": 1599500,
+      "status": "FOR_SALE"
+    },
+    "20509441": {
+      "price": 610126,
+      "status": "RECENTLY_SOLD"
+    },
+    "20509442": {
+      "price": 744000,
+      "status": "RECENTLY_SOLD"
+    },
+    "20509448": {
+      "price": 825000,
+      "status": "FOR_SALE"
+    },
+    "20509519": {
+      "price": 1017000,
+      "status": "SOLD"
+    },
+    "20510349": {
+      "price": 1350100,
+      "status": "RECENTLY_SOLD"
+    },
+    "20510551": {
+      "price": 1985500,
+      "status": "OFF_MARKET"
+    },
+    "20510566": {
+      "price": 1950000,
+      "status": "PENDING"
+    },
+    "58497996": {
+      "price": 5500000,
+      "status": "FOR_SALE"
+    },
+    "122064324": {
+      "price": 9190058,
+      "status": "RECENTLY_SOLD"
+    },
+    "455658997": {
+      "price": 6920000,
+      "status": "RECENTLY_SOLD"
+    },
+    "457533365": {
+      "price": 3509559,
+      "status": "OFF_MARKET"
+    },
+    "458256678": {
+      "price": 5151282,
+      "status": "RECENTLY_SOLD"
+    },
+    "458994644": {
+      "price": 5275000,
+      "status": "RECENTLY_SOLD"
+    },
+    "460575299": {
+      "price": 6300000,
+      "status": "FOR_SALE"
+    },
+    "461135384": {
+      "price": 699000,
+      "status": "FOR_SALE"
+    }
+  },
+  "santa-monica": {
+    "20474194": {
+      "price": 2958300,
+      "status": "OFF_MARKET"
+    },
+    "20474932": {
+      "price": 1999000,
+      "status": "FOR_SALE"
+    },
+    "20475557": {
+      "price": 2818400,
+      "status": "OFF_MARKET"
+    },
+    "20476959": {
+      "price": 7822700,
+      "status": "OFF_MARKET"
+    },
+    "20477023": {
+      "price": 6950000,
+      "status": "FOR_SALE"
+    },
+    "20478707": {
+      "price": 1595000,
+      "status": "FOR_SALE"
+    },
+    "20480830": {
+      "price": 3349700,
+      "status": "OFF_MARKET"
+    },
+    "20484751": {
+      "price": 5582600,
+      "status": "OFF_MARKET"
+    },
+    "20486846": {
+      "price": 5999000,
+      "status": "FOR_SALE"
+    },
+    "20486889": {
+      "price": 4795000,
+      "status": "FOR_SALE"
+    },
+    "20539837": {
+      "price": 3295000,
+      "status": "FOR_SALE"
+    },
+    "338341430": {
+      "price": 7500000,
+      "status": "FOR_SALE"
+    },
+    "459274863": {
+      "price": 6000000,
+      "status": "FOR_SALE"
+    },
+    "460624097": {
+      "price": 6400000,
+      "status": "FOR_SALE"
+    },
+    "2085311277": {
+      "price": 0,
+      "status": "OFF_MARKET"
+    },
+    "2095017507": {
+      "price": 1150000,
+      "status": "FOR_SALE"
+    },
+    "2105044378": {
+      "price": 2700000,
+      "status": "FOR_SALE"
+    }
+  },
+  "venice": {
+    "20443573": {
+      "price": 7999000,
+      "status": "FOR_SALE"
+    },
+    "20443676": {
+      "price": 10750000,
+      "status": "FOR_SALE"
+    },
+    "20443704": {
+      "price": 8640450,
+      "status": "SOLD"
+    },
+    "20443710": {
+      "price": 8800000,
+      "status": "FOR_SALE"
+    },
+    "20443725": {
+      "price": 9054800,
+      "status": "OFF_MARKET"
+    },
+    "20443771": {
+      "price": 4587500,
+      "status": "OFF_MARKET"
+    },
+    "20443804": {
+      "price": 2194200,
+      "status": "OFF_MARKET"
+    },
+    "20443823": {
+      "price": 2990100,
+      "status": "OFF_MARKET"
+    },
+    "20443840": {
+      "price": 1550000,
+      "status": "SOLD"
+    },
+    "20443849": {
+      "price": 3400,
+      "status": "FOR_RENT"
+    },
+    "20443858": {
+      "price": 4032200,
+      "status": "OFF_MARKET"
+    },
+    "20443908": {
+      "price": 3495000,
+      "status": "FOR_SALE"
+    },
+    "20443927": {
+      "price": 3775000,
+      "status": "FOR_SALE"
+    },
+    "20443930": {
+      "price": 2473400,
+      "status": "OFF_MARKET"
+    },
+    "20443931": {
+      "price": 2717800,
+      "status": "OFF_MARKET"
+    },
+    "20444264": {
+      "price": 2902600,
+      "status": "OFF_MARKET"
+    },
+    "20444817": {
+      "price": 2995000,
+      "status": "FOR_SALE"
+    },
+    "20445203": {
+      "price": 2421500,
+      "status": "OFF_MARKET"
+    },
+    "20445220": {
+      "price": 2294900,
+      "status": "OFF_MARKET"
+    },
+    "20448925": {
+      "price": 4650000,
+      "status": "FOR_SALE"
+    },
+    "20449747": {
+      "price": 950000,
+      "status": "FOR_SALE"
+    },
+    "20449899": {
+      "price": 1726900,
+      "status": "OFF_MARKET"
+    },
+    "20450501": {
+      "price": 1595000,
+      "status": "FOR_SALE"
+    },
+    "20450536": {
+      "price": 2385500,
+      "status": "OFF_MARKET"
+    },
+    "20450544": {
+      "price": 1750000,
+      "status": "FOR_SALE"
+    },
+    "20451051": {
+      "price": 3990000,
+      "status": "FOR_SALE"
+    },
+    "20451641": {
+      "price": 1897000,
+      "status": "FOR_SALE"
+    },
+    "20451747": {
+      "price": 4995000,
+      "status": "FOR_SALE"
+    },
+    "20451827": {
+      "price": 1990000,
+      "status": "FOR_SALE"
+    },
+    "20481930": {
+      "price": 2535500,
+      "status": "OFF_MARKET"
+    },
+    "20482084": {
+      "price": 1995000,
+      "status": "FOR_SALE"
+    },
+    "20482284": {
+      "price": 3995000,
+      "status": "FOR_SALE"
+    },
+    "65252005": {
+      "price": 1277500,
+      "status": "OFF_MARKET"
+    },
+    "68978502": {
+      "price": 2350000,
+      "status": "RECENTLY_SOLD"
+    },
+    "82829984": {
+      "price": 2799000,
+      "status": "FOR_SALE"
+    },
+    "89143802": {
+      "price": 1875000,
+      "status": "FOR_SALE"
+    },
+    "89150877": {
+      "price": 6549200,
+      "status": "OFF_MARKET"
+    },
+    "95708805": {
+      "price": 3595000,
+      "status": "FOR_SALE"
+    },
+    "145642923": {
+      "price": 2797000,
+      "status": "FOR_SALE"
+    },
+    "250219006": {
+      "price": 2495000,
+      "status": "FOR_SALE"
+    },
+    "250332976": {
+      "price": 2499900,
+      "status": "FOR_SALE"
+    },
+    "250332986": {
+      "price": 3995000,
+      "status": "FOR_SALE"
+    },
+    "325823530": {
+      "price": 8495000,
+      "status": "FOR_SALE"
+    },
+    "2077872982": {
+      "price": 0,
+      "status": "OFF_MARKET"
+    },
+    "2119191872": {
+      "price": 4507600,
+      "status": "OFF_MARKET"
+    },
+    "2125395017": {
+      "price": 3629600,
+      "status": "OFF_MARKET"
+    },
+    "2131623798": {
+      "price": 646300,
+      "status": "OFF_MARKET"
+    },
+    "2131774335": {
+      "price": 8995000,
+      "status": "FOR_SALE"
+    },
+    "2141519358": {
+      "price": 4977400,
+      "status": "OFF_MARKET"
+    }
+  },
+  "mar-vista": {
+    "20446917": {
+      "price": 595000,
+      "status": "FOR_SALE"
+    },
+    "20447034": {
+      "price": 3450000,
+      "status": "FOR_SALE"
+    },
+    "20454653": {
+      "price": 1599000,
+      "status": "FOR_SALE"
+    },
+    "20455447": {
+      "price": 4250000,
+      "status": "FOR_SALE"
+    },
+    "20456085": {
+      "price": 4127100,
+      "status": "OFF_MARKET"
+    },
+    "20456090": {
+      "price": 8250,
+      "status": "FOR_RENT"
+    },
+    "20456185": {
+      "price": 4399000,
+      "status": "FOR_SALE"
+    },
+    "20456526": {
+      "price": 7000000,
+      "status": "FOR_SALE"
+    },
+    "20456616": {
+      "price": 2995000,
+      "status": "FOR_SALE"
+    },
+    "20456921": {
+      "price": 2800000,
+      "status": "FOR_SALE"
+    },
+    "20456941": {
+      "price": 3409400,
+      "status": "OFF_MARKET"
+    },
+    "20456996": {
+      "price": 1904600,
+      "status": "OFF_MARKET"
+    },
+    "20457000": {
+      "price": 4145000,
+      "status": "FOR_SALE"
+    },
+    "20457018": {
+      "price": 2187200,
+      "status": "OFF_MARKET"
+    },
+    "20457096": {
+      "price": 4250000,
+      "status": "PENDING"
+    },
+    "20457179": {
+      "price": 3998000,
+      "status": "FOR_SALE"
+    },
+    "20457229": {
+      "price": 4534500,
+      "status": "OFF_MARKET"
+    },
+    "20457363": {
+      "price": 4087200,
+      "status": "OFF_MARKET"
+    },
+    "20457442": {
+      "price": 1863600,
+      "status": "PRE_FORECLOSURE"
+    },
+    "20457443": {
+      "price": 2096700,
+      "status": "PRE_FORECLOSURE"
+    },
+    "20457445": {
+      "price": 3999975,
+      "status": "FOR_SALE"
+    },
+    "20457666": {
+      "price": 3194100,
+      "status": "OFF_MARKET"
+    },
+    "45649646": {
+      "price": 3999995,
+      "status": "FOR_SALE"
+    },
+    "111917550": {
+      "price": 3184000,
+      "status": "SOLD"
+    },
+    "145642938": {
+      "price": 2127300,
+      "status": "OFF_MARKET"
+    }
+  }
+}
