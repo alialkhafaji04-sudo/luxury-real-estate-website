@@ -2,6 +2,16 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { ChevronDown, Menu, X } from 'lucide-react';
 
+function LogoMonogram({ className }: { className: string }) {
+  return (
+    <img
+      src="/tlg-lettermark.png"
+      alt="TLG"
+      className={`${className} object-contain`}
+    />
+  );
+}
+
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -147,14 +157,12 @@ export function Navigation() {
 
             {/* Center Logo Lockup */}
             <Link to="/" className="flex flex-col items-center">
-              <div className="text-[#C9A961] mb-1" style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '2.5rem', fontWeight: 600, lineHeight: 1, letterSpacing: '0.05em' }}>
-                TLG
-              </div>
+              <LogoMonogram className="w-[5rem] h-[2.5rem] mb-1" />
               <div className="text-[#F5F1E8] tracking-[0.25em] text-xs mb-0.5" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400 }}>
                 THE LOUVET GROUP
               </div>
-              <div className="text-[#F5F1E8] tracking-[0.25em] text-[0.65rem]" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}>
-                REAL ESTATE INTERNATIONAL
+              <div className="text-[#C9A961] uppercase tracking-[0.22em] text-[0.62rem]" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400 }}>
+                LA's Luxury Real Estate
               </div>
             </Link>
 
@@ -219,11 +227,12 @@ export function Navigation() {
           {/* Mobile Header */}
           <div className="lg:hidden flex items-center justify-between">
             <Link to="/" className="flex flex-col">
-              <div className="text-[#C9A961]" style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '1.75rem', fontWeight: 600, lineHeight: 1 }}>
-                TLG
-              </div>
+              <LogoMonogram className="w-[3.8rem] h-[1.9rem]" />
               <div className="text-[#F5F1E8] tracking-[0.2em] text-[0.65rem]" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400 }}>
                 THE LOUVET GROUP
+              </div>
+              <div className="text-[#C9A961] uppercase tracking-[0.14em] text-[0.48rem] mt-1" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400 }}>
+                LA's Luxury Real Estate
               </div>
             </Link>
             <button
