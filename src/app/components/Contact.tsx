@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MapPin, Phone, Mail, Instagram } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -7,6 +7,7 @@ interface FormData {
   email: string;
   phone: string;
   interest: string;
+  propertyAddress: string;
   message: string;
 }
 
@@ -14,7 +15,14 @@ interface FormErrors {
   name?: string;
   email?: string;
   phone?: string;
+  interest?: string;
+  propertyAddress?: string;
   message?: string;
+}
+
+interface AddressSuggestion {
+  display_name: string;
+  place_id: number;
 }
 
 // Company contact information
@@ -39,10 +47,73 @@ export function Contact() {
     email: '',
     phone: '',
     interest: '',
+    propertyAddress: '',
     message: ''
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [propertySuggestions, setPropertySuggestions] = useState<AddressSuggestion[]>([]);
+  const [selectedPropertyAddress, setSelectedPropertyAddress] = useState('');
+  const [isSearchingProperty, setIsSearchingProperty] = useState(false);
+  const [propertySearchError, setPropertySearchError] = useState('');
+
+  const isSelling = formData.interest === 'selling';
+
+  useEffect(() => {
+    const query = formData.propertyAddress.trim();
+
+    if (!isSelling || selectedPropertyAddress === formData.propertyAddress) {
+      setPropertySuggestions([]);
+      setPropertySearchError('');
+      setIsSearchingProperty(false);
+      return;
+    }
+
+    if (query.length < 4) {
+      setPropertySuggestions([]);
+      setPropertySearchError('');
+      setIsSearchingProperty(false);
+      return;
+    }
+
+    const controller = new AbortController();
+    const timeout = window.setTimeout(async () => {
+      setIsSearchingProperty(true);
+      setPropertySearchError('');
+
+      try {
+        const response = await fetch(
+          `https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=5&countrycodes=us&q=${encodeURIComponent(query)}`,
+          {
+            signal: controller.signal,
+            headers: {
+              Accept: 'application/json'
+            }
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error('Address search failed');
+        }
+
+        const results = (await response.json()) as AddressSuggestion[];
+        setPropertySuggestions(results);
+        setPropertySearchError(results.length === 0 ? 'No matching property addresses found' : '');
+      } catch (error) {
+        if ((error as Error).name !== 'AbortError') {
+          setPropertySuggestions([]);
+          setPropertySearchError('Address suggestions are unavailable. Please try again shortly.');
+        }
+      } finally {
+        setIsSearchingProperty(false);
+      }
+    }, 350);
+
+    return () => {
+      window.clearTimeout(timeout);
+      controller.abort();
+    };
+  }, [formData.propertyAddress, isSelling, selectedPropertyAddress]);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -59,6 +130,18 @@ export function Contact() {
 
     if (!formData.phone.trim()) {
       newErrors.phone = 'Phone is required';
+    }
+
+    if (!formData.interest) {
+      newErrors.interest = 'Interest is required';
+    }
+
+    if (
+      formData.interest === 'selling' &&
+      formData.propertyAddress.trim() &&
+      formData.propertyAddress.trim() !== selectedPropertyAddress.trim()
+    ) {
+      newErrors.propertyAddress = 'Please select a property address from the suggestions';
     }
 
     if (!formData.message.trim()) {
@@ -91,11 +174,12 @@ export function Contact() {
           access_key: '2bd05a18-6fa6-48dc-a5ab-697dc6a30897',
           to_email: COMPANY_INFO.email,
           from_name: formData.name,
-          subject: `New Inquiry from ${formData.name} - ${formData.interest || 'General'}`,
+          subject: `New Inquiry from ${formData.name} - ${formData.interest}`,
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          interest: formData.interest || 'Not specified',
+          interest: formData.interest,
+          property_address: formData.interest === 'selling' ? formData.propertyAddress || 'Not provided' : undefined,
           message: formData.message,
         }),
       });
@@ -109,6 +193,7 @@ export function Contact() {
           email: '',
           phone: '',
           interest: '',
+          propertyAddress: '',
           message: ''
         });
         setErrors({});
@@ -127,6 +212,7 @@ export function Contact() {
           email: '',
           phone: '',
           interest: '',
+          propertyAddress: '',
           message: ''
         });
         setErrors({});
@@ -146,6 +232,7 @@ export function Contact() {
         email: '',
         phone: '',
         interest: '',
+        propertyAddress: '',
         message: ''
       });
       setErrors({});
@@ -156,10 +243,34 @@ export function Contact() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+
+    if (name === 'propertyAddress') {
+      setSelectedPropertyAddress('');
+    }
+
+    if (name === 'interest') {
+      setSelectedPropertyAddress('');
+      setPropertySuggestions([]);
+      setPropertySearchError('');
+      setErrors(prev => ({ ...prev, propertyAddress: undefined }));
+    }
+
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+      ...(name === 'interest' && value !== 'selling' ? { propertyAddress: '' } : {})
+    }));
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
     }
+  };
+
+  const handlePropertySuggestionSelect = (suggestion: AddressSuggestion) => {
+    setFormData(prev => ({ ...prev, propertyAddress: suggestion.display_name }));
+    setSelectedPropertyAddress(suggestion.display_name);
+    setPropertySuggestions([]);
+    setPropertySearchError('');
+    setErrors(prev => ({ ...prev, propertyAddress: undefined }));
   };
 
   return (
@@ -294,15 +405,77 @@ export function Contact() {
                   name="interest"
                   value={formData.interest}
                   onChange={handleChange}
-                  className="w-full bg-transparent border-b border-[#C9A961]/30 py-3 text-[#F5F1E8]/40 focus:outline-none focus:border-[#C9A961] transition-colors text-sm tracking-wider cursor-pointer"
+                  className={`w-full bg-transparent border-b py-3 focus:outline-none transition-colors text-sm tracking-wider cursor-pointer ${
+                    errors.interest ? 'border-red-500' : 'border-[#C9A961]/30 focus:border-[#C9A961]'
+                  } ${formData.interest ? 'text-[#F5F1E8]' : 'text-[#F5F1E8]/40'}`}
                   style={{ fontFamily: 'Inter, sans-serif' }}
                 >
-                  <option value="" className="bg-[#141414]">INTEREST</option>
+                  <option value="" className="bg-[#141414]">INTEREST *</option>
                   <option value="buying" className="bg-[#141414]">Buying</option>
                   <option value="selling" className="bg-[#141414]">Selling</option>
                   <option value="leasing" className="bg-[#141414]">Leasing</option>
                   <option value="other" className="bg-[#141414]">Other</option>
                 </select>
+                {errors.interest && (
+                  <p className="text-red-400 text-xs mt-1">{errors.interest}</p>
+                )}
+              </div>
+
+              <div
+                className="overflow-hidden"
+                style={{
+                  maxHeight: isSelling ? '20rem' : '0rem',
+                  opacity: isSelling ? 1 : 0,
+                  transform: isSelling ? 'translateY(0)' : 'translateY(-4px)',
+                  transition: 'max-height 360ms ease, opacity 260ms ease, transform 300ms ease'
+                }}
+              >
+                <div className="relative">
+                  <input
+                    type="text"
+                    name="propertyAddress"
+                    value={formData.propertyAddress}
+                    onChange={handleChange}
+                    placeholder="SEARCH PROPERTY ADDRESS YOU WISH TO SELL"
+                    autoComplete="off"
+                    className={`w-full bg-transparent border-b py-3 text-[#F5F1E8] placeholder-[#F5F1E8]/40 focus:outline-none transition-colors text-sm tracking-wider ${
+                      errors.propertyAddress ? 'border-red-500' : 'border-[#C9A961]/30 focus:border-[#C9A961]'
+                    }`}
+                    style={{ fontFamily: 'Inter, sans-serif' }}
+                  />
+
+                  {isSearchingProperty && (
+                    <p className="text-[#C9A961]/70 text-xs mt-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      Searching addresses...
+                    </p>
+                  )}
+
+                  {errors.propertyAddress && (
+                    <p className="text-red-400 text-xs mt-1">{errors.propertyAddress}</p>
+                  )}
+
+                  {!errors.propertyAddress && propertySearchError && (
+                    <p className="text-[#F5F1E8]/50 text-xs mt-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      {propertySearchError}
+                    </p>
+                  )}
+
+                  {propertySuggestions.length > 0 && (
+                    <div className="mt-2 border border-[#C9A961]/20 bg-[#0A0A0A]/95 backdrop-blur-sm max-h-44 overflow-y-auto">
+                      {propertySuggestions.map((suggestion) => (
+                        <button
+                          key={suggestion.place_id}
+                          type="button"
+                          onClick={() => handlePropertySuggestionSelect(suggestion)}
+                          className="block w-full px-3 py-2 text-left text-[#F5F1E8]/80 text-xs leading-relaxed hover:bg-[#C9A961]/10 hover:text-[#F5F1E8] transition-colors"
+                          style={{ fontFamily: 'Inter, sans-serif' }}
+                        >
+                          {suggestion.display_name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
 
               <div>
