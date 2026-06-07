@@ -33,6 +33,7 @@ export function Footer() {
             Home Search
           </Link>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div>
             <Link to="/">
@@ -132,8 +133,15 @@ export function Footer() {
         </div>
 
         <div className="border-t border-[#C9A961]/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-[#F5F1E8]/50 text-xs">
+          <div className="text-[#F5F1E8]/50 text-xs text-center md:text-left">
             © 2026 The Louvet Group. All rights reserved. | Equal Housing Opportunity
+            <span className="mx-2 text-[#F5F1E8]/35">/</span>
+            <Link
+              to="/fair-housing-statement"
+              className="hover:text-[#C9A961] transition-colors"
+            >
+              Fair Housing Statement
+            </Link>
           </div>
 
           <div className="flex gap-6">

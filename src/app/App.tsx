@@ -5,6 +5,7 @@ import { HomePage } from './pages/HomePage';
 import { PropertiesPage } from './pages/PropertiesPage';
 import { PropertyDetailPage } from './pages/PropertyDetailPage';
 import { NeighborhoodPage } from './pages/NeighborhoodPage';
+import { FairHousingPage } from './pages/FairHousingPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 // Scroll to top on route change (unless hash is present)
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/properties" element={<PropertiesPage />} />
         <Route path="/properties/:id" element={<PropertyDetailPage />} />
         <Route path="/neighborhoods/:slug" element={<NeighborhoodPage />} />
+        <Route path="/fair-housing-statement" element={<FairHousingPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Toaster
