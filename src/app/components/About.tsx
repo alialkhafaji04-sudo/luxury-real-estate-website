@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, Phone, Mail } from 'lucide-react';
 
-function TeamCard({ name, role, phone, email, image, dre, languages }: {
+function TeamCard({ name, role, phone, email, image, dre, languages, imagePosition }: {
   name: string;
   role: string;
   phone?: string;
@@ -9,6 +9,7 @@ function TeamCard({ name, role, phone, email, image, dre, languages }: {
   image: string;
   dre?: string;
   languages?: string[];
+  imagePosition?: string;
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -22,25 +23,34 @@ function TeamCard({ name, role, phone, email, image, dre, languages }: {
           src={image}
           alt={name}
           className="w-full h-full object-cover"
+          style={{ objectPosition: imagePosition || 'center' }}
         />
       </div>
 
       {/* Info Panel */}
       <div className="p-2.5 bg-gradient-to-b from-[#0A0A0A]/95 to-[#0A0A0A]">
         <h4
-          className="text-[#F5F1E8] mb-0.5 uppercase leading-tight"
+          className="text-[#F5F1E8] mb-0.5 uppercase leading-tight min-h-[1.35rem]"
           style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '0.75rem', fontWeight: 400, letterSpacing: '0.03em' }}
         >
           {name}
         </h4>
-        <p className="text-[#C9A961] text-[0.5rem] tracking-[0.1em] uppercase mb-2 leading-tight" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400 }}>
+        <p className="text-[#C9A961] text-[0.5rem] tracking-[0.1em] uppercase mb-2 leading-tight min-h-[1.75rem]" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400 }}>
           {role}
         </p>
 
         {hasContactInfo && (
           <>
-            {isExpanded && (
-              <div className="space-y-1 mb-2 text-[0.5rem] text-[#F5F1E8]/70">
+            <div
+              className="overflow-hidden"
+              style={{
+                maxHeight: isExpanded ? '7rem' : '0rem',
+                opacity: isExpanded ? 1 : 0,
+                transform: isExpanded ? 'translateY(0)' : 'translateY(-4px)',
+                transition: 'max-height 420ms ease, opacity 280ms ease, transform 320ms ease'
+              }}
+            >
+              <div className="space-y-1 pb-2 text-[0.5rem] text-[#F5F1E8]/70">
                 {phone && (
                   <a href={`tel:${phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-1 hover:text-[#C9A961] transition-colors">
                     <Phone size={8} className="text-[#C9A961]" />
@@ -64,7 +74,7 @@ function TeamCard({ name, role, phone, email, image, dre, languages }: {
                   </p>
                 )}
               </div>
-            )}
+            </div>
 
             <div className="h-[1px] bg-[#C9A961]/20 mb-2" />
 
@@ -86,15 +96,6 @@ function TeamCard({ name, role, phone, email, image, dre, languages }: {
 export function About() {
   const teamMembers = [
     {
-      name: 'EMRE MUHSINOGLU',
-      role: 'DIRECTOR OF THE ESTATE DIVISION & TEAM LEADER',
-      phone: '424-566-9001',
-      email: 'emre@thelouvetgroup.com',
-      image: '/team/emre.png',
-      dre: '02222895',
-      languages: ['Turkish']
-    },
-    {
       name: 'EZGI FICICI',
       role: 'LUXURY AGENT',
       phone: '747-250-2160',
@@ -112,12 +113,12 @@ export function About() {
       dre: '02077728'
     },
     {
-      name: 'EMILY MEZA',
+      name: 'EMILY JUDITH',
       role: 'LUXURY AGENT',
-      phone: '310-925-9852',
-      email: 'kenia@thelouvetgroup.com',
+      phone: '310-745-9959',
+      email: 'emily@thelouvetgroup.com',
       image: '/team/emily.png',
-      dre: '01765914',
+      dre: '02227405',
       languages: ['Spanish']
     },
     {
@@ -130,13 +131,13 @@ export function About() {
       languages: ['Greek']
     },
     {
-      name: 'POLINA MITIANINA',
+      name: 'VILAYVANH SHAH',
       role: 'LUXURY AGENT',
-      phone: '415-509-7871',
-      email: 'polina@thelouvetgroup.com',
-      image: '/team/polina.png',
-      dre: '02237196',
-      languages: ['Russian']
+      phone: '310-248-0923',
+      email: 'vilayvanh@thelouvetgroup.com',
+      image: '/team/1.png',
+      dre: '01987658',
+      languages: ['Thai', 'Laotian']
     },
     {
       name: 'ARDRA FLEMING',
@@ -155,13 +156,21 @@ export function About() {
       dre: '02260280'
     },
     {
-      name: 'VILAYVANH SHAH',
+      name: 'KENIA CUEVAS',
       role: 'LUXURY AGENT',
-      phone: '310-248-0923',
-      email: 'vilayvanh@thelouvetgroup.com',
-      image: '/team/1.png',
-      dre: '01987658',
-      languages: ['Thai', 'Laotian']
+      phone: '310-925-9825',
+      email: 'soldbykenia@gmail.com',
+      image: '/team/kenia-cuevas.png',
+      dre: '01765914',
+      languages: ['Spanish']
+    },
+    {
+      name: 'DON WIGHT',
+      role: 'TRANSACTION COORDINATOR',
+      phone: '310-968-2322',
+      email: 'Dwight@thelouvetgroup.com',
+      image: '/team/don-wight.jpg',
+      dre: '01302289'
     },
     {
       name: 'MICHELLE SINGERMAN',
@@ -169,6 +178,14 @@ export function About() {
       phone: '310-528-0123',
       email: 'michellesingermanrealestate@gmail.com',
       image: '/team/michelle.jpg'
+    },
+    {
+      name: 'MARCOS HOBSON',
+      role: 'INTERN',
+      phone: '+1 (785) 207-1951',
+      email: 'mhobson555@gmail.com',
+      image: '/team/marcos-hobson.jpg',
+      imagePosition: 'center top'
     },
     {
       name: 'SAAD EL GHARBAOUI',
@@ -268,11 +285,69 @@ export function About() {
           </div>
         </div>
 
+        {/* Emre Bio Section */}
+        <div className="mb-12 sm:mb-20 grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <p className="text-[#C9A961] uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[0.65rem] sm:text-xs mb-3 sm:mb-4" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400 }}>
+              DIRECTOR OF THE ESTATE DIVISION | TEAM LEADER
+            </p>
+            <h4
+              className="text-[#F5F1E8] uppercase mb-4 sm:mb-6"
+              style={{
+                fontFamily: '"Cormorant Garamond", serif',
+                fontSize: 'clamp(1.75rem, 4vw, 3rem)',
+                fontWeight: 300,
+                letterSpacing: '0.05em'
+              }}
+            >
+              EMRE MUHSINOGLU
+            </h4>
+            <div className="space-y-3 sm:space-y-4 text-[#F5F1E8]/80 text-[0.8rem] sm:text-sm leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}>
+              <p>
+                As Director of the Estate Division and Team Leader, Emre Muhsinoglu brings a thoughtful, relationship-driven approach to luxury real estate. His work centers on guiding clients through high-value residential opportunities with clarity, discretion, and a strong understanding of the Los Angeles market.
+              </p>
+              <p>
+                Emre's expertise spans estate representation, strategic client advisory, and coordinated team leadership. His measured approach to negotiations, market positioning, and client service helps ensure every detail is handled with care from the first conversation through closing.
+              </p>
+              <p className="hidden sm:block">
+                Fluent in Turkish and English, Emre brings an international perspective to the team and a commitment to serving clients with professionalism, integrity, and personal attention at every step.
+              </p>
+            </div>
+            <div className="mt-5 sm:mt-8 flex flex-wrap gap-4 sm:gap-6 text-[0.65rem] sm:text-xs text-[#C9A961]/80" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <div>
+                <span className="text-[#F5F1E8]/50 uppercase tracking-wider">DRE#</span>
+                <span className="ml-2">02222895</span>
+              </div>
+              <div>
+                <span className="text-[#F5F1E8]/50 uppercase tracking-wider">Languages</span>
+                <span className="ml-2">English, Turkish</span>
+              </div>
+            </div>
+            <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <a href="tel:4245669001" className="text-[#C9A961] text-[0.8rem] sm:text-sm hover:text-[#F5F1E8] transition-colors flex items-center gap-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <Phone size={14} />
+                424-566-9001
+              </a>
+              <a href="mailto:emre@thelouvetgroup.com" className="text-[#C9A961] text-[0.8rem] sm:text-sm hover:text-[#F5F1E8] transition-colors flex items-center gap-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <Mail size={14} />
+                emre@thelouvetgroup.com
+              </a>
+            </div>
+          </div>
+          <div className="relative aspect-[4/5] max-w-sm mx-auto lg:order-2 lg:ml-auto lg:mr-0 lg:max-w-md">
+            <img
+              src="/team/emre.png"
+              alt="Emre Muhsinoglu"
+              className="w-full h-full object-cover border border-[#C9A961]/30"
+            />
+          </div>
+        </div>
+
         {/* Divider */}
         <div className="h-[1px] bg-gradient-to-r from-transparent via-[#C9A961]/30 to-transparent mb-10 sm:mb-16" />
 
         {/* Team Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 items-start">
           {teamMembers.map((member, index) => (
             <TeamCard key={index} {...member} />
           ))}
