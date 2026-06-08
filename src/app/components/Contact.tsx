@@ -28,7 +28,7 @@ interface AddressSuggestion {
 // Company contact information
 export const COMPANY_INFO = {
   email: 'support@thelouvetgroup.com',
-  phone: '310-734-2102',
+  phone: '310-968-9978',
   address: {
     street: '9350 Wilshire Blvd.',
     suite: 'Suite #250',
