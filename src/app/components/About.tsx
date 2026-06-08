@@ -140,7 +140,7 @@ export function About() {
       languages: ['Thai', 'Laotian']
     },
     {
-      name: 'ARDRA FLEMING',
+      name: 'ADRA WILLIAMS',
       role: 'LUXURY AGENT',
       phone: '310-466-1777',
       email: 'ardra@thelouvetgroup.com',
@@ -238,7 +238,7 @@ export function About() {
           </div>
           <div>
             <p className="text-[#C9A961] uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[0.65rem] sm:text-xs mb-3 sm:mb-4" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400 }}>
-              FOUNDER | PRINCIPAL BROKER
+              FOUNDER | PRINCIPAL
             </p>
             <h4
               className="text-[#F5F1E8] uppercase mb-4 sm:mb-6"
@@ -253,13 +253,13 @@ export function About() {
             </h4>
             <div className="space-y-3 sm:space-y-4 text-[#F5F1E8]/80 text-[0.8rem] sm:text-sm leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300 }}>
               <p>
-                With over 30 years of experience in luxury real estate, Laurent Louvet has established himself as one of Los Angeles' most trusted luxury real estate brokers. His distinguished career spans residential estates, architectural masterpieces, and investment properties across Beverly Hills, Bel Air, Holmby Hills, and the Westside.
+                With over 30 years of experience in luxury real estate, Laurent Louvet has established himself as one of Los Angeles' most trusted luxury real estate advisors. His distinguished career spans residential estates, architectural masterpieces, and investment properties across Beverly Hills, Bel Air, Holmby Hills, and the Westside.
               </p>
               <p>
                 Laurent's expertise encompasses market analysis, strategic negotiations, and discreet representation for clients who demand absolute confidentiality. His deep understanding of the Los Angeles luxury market, combined with an extensive network of industry connections, enables him to identify exclusive off-market opportunities and achieve exceptional results.
               </p>
               <p className="hidden sm:block">
-                Fluent in French and English, Laurent brings a refined international perspective to every transaction. His commitment to personalized service and unwavering integrity has earned him a reputation as the preferred broker for discerning buyers and sellers seeking extraordinary properties.
+                Fluent in French and English, Laurent brings a refined international perspective to every transaction. His commitment to personalized service and unwavering integrity has earned him a reputation as the preferred advisor for discerning buyers and sellers seeking extraordinary properties.
               </p>
             </div>
             <div className="mt-5 sm:mt-8 flex flex-wrap gap-4 sm:gap-6 text-[0.65rem] sm:text-xs text-[#C9A961]/80" style={{ fontFamily: 'Montserrat, sans-serif' }}>
