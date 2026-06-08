@@ -140,7 +140,7 @@ export function About() {
       languages: ['Thai', 'Laotian']
     },
     {
-      name: 'ADRA WILLIAMS',
+      name: 'ARDRA WILLIAM',
       role: 'LUXURY AGENT',
       phone: '310-466-1777',
       email: 'ardra@thelouvetgroup.com',
