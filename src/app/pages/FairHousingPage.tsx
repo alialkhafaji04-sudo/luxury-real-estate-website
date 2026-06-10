@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router';
 import { ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
 import { Navigation } from '../components/Navigation';
@@ -176,7 +177,10 @@ export function FairHousingPage() {
             </label>
 
             <p className="max-w-[1400px] text-[#5C5C5C] text-xs sm:text-sm leading-7">
-              By submitting my phone number above, I agree to calls, texts, and emails from Beverly & Company regarding my account, inquiry, and services provided to me. Message & data rates may apply. Message frequency may vary. I also agree to Beverly & Company's Privacy Policy and Beverly & Company's Terms & Conditions. Reply STOP to opt out or HELP for help.
+              By submitting my phone number above, I agree to calls, texts, and emails from Beverly & Company regarding my account, inquiry, and services provided to me. Message & data rates may apply. Message frequency may vary. I also agree to the{' '}
+              <Link to="/privacy-policy" className="text-[#111] underline underline-offset-4 hover:text-[#8B7340] transition-colors">
+                Privacy Policy
+              </Link>. Reply STOP to opt out or HELP for help.
             </p>
 
             <button

@@ -359,6 +359,16 @@ export function PropertyDetailPage() {
                     className="w-full bg-transparent border-b border-[#C9A961]/30 py-3 text-[#F5F1E8] placeholder-[#F5F1E8]/40 focus:outline-none focus:border-[#C9A961] transition-colors text-sm tracking-wider resize-none"
                     style={{ fontFamily: 'Inter, sans-serif' }}
                   />
+                  <p className="text-[#F5F1E8]/50 text-xs leading-6" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    By submitting this inquiry, you agree that we may use your information to respond about this property. Review our{' '}
+                    <Link to="/privacy-policy" className="text-[#C9A961] hover:text-[#8B7340] transition-colors">
+                      Privacy Policy
+                    </Link>{' '}
+                    and{' '}
+                    <Link to="/agency-disclosure" className="text-[#C9A961] hover:text-[#8B7340] transition-colors">
+                      Agency Disclosure
+                    </Link>.
+                  </p>
                   <button
                     type="submit"
                     disabled={isSubmitting}

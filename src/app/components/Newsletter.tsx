@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router';
 import { ArrowRight, Check } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -98,6 +99,12 @@ export function Newsletter() {
                 )}
               </button>
             </form>
+            <p className="mt-4 text-[#F5F1E8]/50 text-xs leading-6" style={{ fontFamily: 'Inter, sans-serif' }}>
+              By subscribing, you agree that we may use your email to send listing and market updates. Review our{' '}
+              <Link to="/privacy-policy" className="text-[#C9A961] hover:text-[#8B7340] transition-colors">
+                Privacy Policy
+              </Link>.
+            </p>
           </div>
         </div>
       </div>

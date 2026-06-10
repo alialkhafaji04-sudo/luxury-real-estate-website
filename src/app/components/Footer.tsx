@@ -47,7 +47,7 @@ export function Footer() {
               LA's luxury real estate specialists with over 30 years of experience serving discerning clients since {COMPANY_INFO.yearFounded}.
             </p>
             <div className="mt-6 text-[#F5F1E8]/50 text-xs">
-              DRE #{COMPANY_INFO.dre}
+              {COMPANY_INFO.agentName}, {COMPANY_INFO.licenseStatus}. DRE #{COMPANY_INFO.dre}. Responsible Broker: {COMPANY_INFO.brokerName}.
             </div>
           </div>
 
@@ -132,8 +132,14 @@ export function Footer() {
           </div>
         </div>
 
+        <div className="border-t border-[#C9A961]/20 pt-8 mb-8 text-center md:text-left">
+          <p className="text-[#F5F1E8]/55 text-xs leading-6">
+            {COMPANY_INFO.agentName}, {COMPANY_INFO.licenseStatus}. DRE #{COMPANY_INFO.dre}. Responsible Broker: {COMPANY_INFO.brokerName}.
+          </p>
+        </div>
+
         <div className="border-t border-[#C9A961]/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-[#F5F1E8]/50 text-xs text-center md:text-left">
+          <div className="text-[#F5F1E8]/50 text-xs text-center md:text-left leading-6">
             © 2026 The Louvet Group. All rights reserved. | Equal Housing Opportunity
             <span className="mx-2 text-[#F5F1E8]/35">/</span>
             <Link
@@ -141,6 +147,20 @@ export function Footer() {
               className="hover:text-[#C9A961] transition-colors"
             >
               Fair Housing Statement
+            </Link>
+            <span className="mx-2 text-[#F5F1E8]/35">/</span>
+            <Link
+              to="/agency-disclosure"
+              className="hover:text-[#C9A961] transition-colors"
+            >
+              Agency Disclosure
+            </Link>
+            <span className="mx-2 text-[#F5F1E8]/35">/</span>
+            <Link
+              to="/privacy-policy"
+              className="hover:text-[#C9A961] transition-colors"
+            >
+              Privacy Policy
             </Link>
           </div>
 

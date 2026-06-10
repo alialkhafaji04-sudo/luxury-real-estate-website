@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 import { MapPin, Phone, Mail, Instagram } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -36,6 +37,9 @@ export const COMPANY_INFO = {
     state: 'CA',
     zip: '90212'
   },
+  agentName: 'Laurent Louvet',
+  licenseStatus: 'Licensed Real Estate Agent, State of California',
+  brokerName: 'Beverly & Company',
   dre: '00883925',
   instagram: '@thelouvetgroup_',
   yearFounded: 1992
@@ -342,7 +346,7 @@ export function Contact() {
                 Over 30 years of experience serving Los Angeles' most discerning clients.
               </p>
               <p className="text-[#C9A961]/60 text-xs mt-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                DRE #{COMPANY_INFO.dre}
+                {COMPANY_INFO.agentName}, {COMPANY_INFO.licenseStatus}. DRE #{COMPANY_INFO.dre}. Responsible Broker: {COMPANY_INFO.brokerName}.
               </p>
             </div>
           </div>
@@ -494,6 +498,17 @@ export function Contact() {
                   <p className="text-red-400 text-xs mt-1">{errors.message}</p>
                 )}
               </div>
+
+              <p className="text-[#F5F1E8]/50 text-xs leading-6" style={{ fontFamily: 'Inter, sans-serif' }}>
+                By submitting this inquiry, you agree that we may use your information to respond to your request. Review our{' '}
+                <Link to="/privacy-policy" className="text-[#C9A961] hover:text-[#8B7340] transition-colors">
+                  Privacy Policy
+                </Link>{' '}
+                and{' '}
+                <Link to="/agency-disclosure" className="text-[#C9A961] hover:text-[#8B7340] transition-colors">
+                  Agency Disclosure
+                </Link>.
+              </p>
 
               <button
                 type="submit"
