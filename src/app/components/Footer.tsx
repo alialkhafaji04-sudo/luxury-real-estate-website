@@ -1,6 +1,7 @@
 import { Link, useLocation, useNavigate } from 'react-router';
 import { Instagram, Facebook, Linkedin, Phone } from 'lucide-react';
 import { COMPANY_INFO } from './Contact';
+import { neighborhoods } from '../../data/neighborhoods';
 
 export function Footer() {
   const location = useLocation();
@@ -65,31 +66,13 @@ export function Footer() {
           <div>
             <h4 className="text-[#F5F1E8] uppercase tracking-widest text-xs mb-6">Neighborhoods</h4>
             <ul className="space-y-3 text-[#F5F1E8]/60 text-sm">
-              <li>
-                <Link to="/neighborhoods/marina-del-rey" className="hover:text-[#C9A961] transition-colors">
-                  Marina Del Rey
-                </Link>
-              </li>
-              <li>
-                <Link to="/neighborhoods/beverly-hills" className="hover:text-[#C9A961] transition-colors">
-                  Beverly Hills
-                </Link>
-              </li>
-              <li>
-                <Link to="/neighborhoods/bel-air" className="hover:text-[#C9A961] transition-colors">
-                  Bel Air
-                </Link>
-              </li>
-              <li>
-                <Link to="/neighborhoods/malibu" className="hover:text-[#C9A961] transition-colors">
-                  Malibu
-                </Link>
-              </li>
-              <li>
-                <Link to="/neighborhoods/west-hollywood" className="hover:text-[#C9A961] transition-colors">
-                  West Hollywood
-                </Link>
-              </li>
+              {neighborhoods.map((neighborhood) => (
+                <li key={neighborhood.slug}>
+                  <Link to={`/neighborhoods/${neighborhood.slug}`} className="hover:text-[#C9A961] transition-colors">
+                    {neighborhood.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

@@ -5,6 +5,7 @@ import { Footer } from '../components/Footer';
 import { Newsletter } from '../components/Newsletter';
 import { PropertyCard } from '../components/PropertyCard';
 import { properties, Neighborhood } from '../../data/properties';
+import { neighborhoods } from '../../data/neighborhoods';
 import { ChevronDown } from 'lucide-react';
 
 type FilterStatus = 'all' | 'FOR SALE' | 'FOR LEASE';
@@ -33,14 +34,13 @@ export function PropertiesPage() {
       }
     });
 
-  const neighborhoodLabels: Record<Neighborhood | 'all', string> = {
-    'all': 'All Neighborhoods',
-    'marina-del-rey': 'Marina Del Rey',
-    'beverly-hills': 'Beverly Hills',
-    'bel-air': 'Bel Air',
-    'malibu': 'Malibu',
-    'west-hollywood': 'West Hollywood'
-  };
+  const neighborhoodOptions = [
+    { slug: 'all' as const, name: 'All Neighborhoods' },
+    ...neighborhoods.map((neighborhood) => ({
+      slug: neighborhood.slug,
+      name: neighborhood.name,
+    })),
+  ];
 
   return (
     <div className="min-h-screen bg-[#0A0A0A]">
@@ -91,9 +91,9 @@ export function PropertiesPage() {
                   className="appearance-none bg-transparent border border-[#C9A961]/30 px-6 py-3 pr-12 text-[#F5F1E8] text-sm tracking-wider cursor-pointer hover:border-[#C9A961] transition-colors"
                   style={{ fontFamily: 'Montserrat, sans-serif' }}
                 >
-                  {Object.entries(neighborhoodLabels).map(([value, label]) => (
-                    <option key={value} value={value} className="bg-[#0A0A0A]">
-                      {label}
+                  {neighborhoodOptions.map((neighborhood) => (
+                    <option key={neighborhood.slug} value={neighborhood.slug} className="bg-[#0A0A0A]">
+                      {neighborhood.name}
                     </option>
                   ))}
                 </select>

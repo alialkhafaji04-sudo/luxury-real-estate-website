@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { ChevronDown, Menu, X } from 'lucide-react';
+import { neighborhoods } from '../../data/neighborhoods';
 
 function LogoMonogram({ className }: { className: string }) {
   return (
@@ -64,6 +65,10 @@ export function Navigation() {
   }, [location]);
 
   const scrollToSection = (sectionId: string) => {
+    setIsMobileMenuOpen(false);
+    setPropertiesDropdownOpen(false);
+    setAboutDropdownOpen(false);
+
     if (location.pathname !== '/') {
       navigate(`/#${sectionId}`);
     } else {
@@ -86,14 +91,6 @@ export function Navigation() {
       }, 100);
     }
   }, [location]);
-
-  const neighborhoods = [
-    { name: 'Marina Del Rey', slug: 'marina-del-rey' },
-    { name: 'Beverly Hills', slug: 'beverly-hills' },
-    { name: 'Bel Air', slug: 'bel-air' },
-    { name: 'Malibu', slug: 'malibu' },
-    { name: 'West Hollywood', slug: 'west-hollywood' },
-  ];
 
   return (
     <>
@@ -251,7 +248,11 @@ export function Navigation() {
           <div className="flex flex-col items-center space-y-8 px-8 pb-12">
             <ul className="flex flex-col items-center gap-8 uppercase tracking-[0.2em] text-sm text-[#F5F1E8]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               <li>
-                <Link to="/properties" className="hover:text-[#C9A961] transition-colors">
+                <Link
+                  to="/properties"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="hover:text-[#C9A961] transition-colors"
+                >
                   Properties
                 </Link>
               </li>
@@ -287,6 +288,7 @@ export function Navigation() {
                   <Link
                     key={n.slug}
                     to={`/neighborhoods/${n.slug}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className="text-center text-[#F5F1E8]/80 text-sm hover:text-[#C9A961] transition-colors py-2"
                     style={{ fontFamily: 'Montserrat, sans-serif' }}
                   >
